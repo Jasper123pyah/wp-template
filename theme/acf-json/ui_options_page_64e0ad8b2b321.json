@@ -1,0 +1,22 @@
+{
+    "key": "ui_options_page_64e0ad8b2b321",
+    "title": "Opties",
+    "active": true,
+    "menu_order": 0,
+    "page_title": "Opties",
+    "menu_slug": "opties",
+    "parent_slug": "none",
+    "advanced_configuration": 0,
+    "icon_url": "",
+    "menu_title": "",
+    "position": "",
+    "redirect": 0,
+    "description": "",
+    "update_button": "Update",
+    "updated_message": "Options Updated",
+    "capability": "edit_posts",
+    "data_storage": "options",
+    "post_id": "",
+    "autoload": 0,
+    "modified": 1692446144
+}

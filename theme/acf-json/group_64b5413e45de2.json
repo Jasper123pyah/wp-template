@@ -1,0 +1,131 @@
+{
+    "key": "group_64b5413e45de2",
+    "title": "Reviews",
+    "fields": [
+        {
+            "key": "field_64b5413e40f5a",
+            "label": "Naam",
+            "name": "name",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Naam van de persoon",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_64b5417140f5b",
+            "label": "Titel",
+            "name": "title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Titel (baan) van de persoon.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_64b5418a40f5c",
+            "label": "Foto",
+            "name": "picture",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Foto van de persoon.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_64df864497633",
+            "label": "Tekst",
+            "name": "text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Vul hier de tekst van de review in.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 650,
+            "rows": 12,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_64b5419d40f5d",
+            "label": "Sterren",
+            "name": "stars",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "Aantal sterren gegeven. Dit gaat per tientallen, alle overige eenheden zijn decimalen.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 1,
+            "min": 1,
+            "max": 50,
+            "step": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "reviews"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1693917963
+}

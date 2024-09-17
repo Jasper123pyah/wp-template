@@ -1,0 +1,94 @@
+.three-cta {
+	padding: 60px 0;
+	width: 100%;
+	min-height: 500px;
+	position: relative;
+	display: none;
+	@media (min-width: 1181px) {
+		display: block;
+		padding: 152px 0;
+		background-color: #D5C2C1;
+	}
+
+	&--mobile {
+		@media (min-width: 1181px) {
+			display: none;
+		}
+	}
+
+	&__container {
+		display: grid;
+		width: 100%;
+		grid-template-columns: 1fr;
+		grid-gap: 24px;
+
+		@media (min-width: 1181px) {
+			grid-template-columns: repeat(3, 1fr);
+			grid-gap: 100px;
+		}
+	}
+
+	&__head {
+		display: flex;
+		align-items: center;
+		gap: 32px;
+		@media (min-width: 1181px) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+
+	&__flower {
+		right: 0;
+		bottom: 0;
+		opacity: 0.4;
+		position: absolute;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		aspect-ratio: 683/867;
+		height: 0%;
+		background-image: url('./assets/images/flower.svg');
+		z-index: 0;
+		@media (min-width: 1181px) {
+			height: 10%;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		height: 100%;
+		width: 100%;
+		gap: 32px;
+		text-align: left;
+		color: #ffffff;
+		z-index: 1;
+		@media (min-width: 1181px) {
+			max-width: 644px;
+		}
+		@media(max-width: 1181px) {
+			background-color: #D5C2C1;
+			.container {
+				padding: 65px 0;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				height: 100%;
+				gap: 32px;
+			}
+		}
+	}
+
+	&__icon {
+		width: auto;
+		object-fit: cover;
+		object-position: center;
+		height: 66px;
+
+		@media (min-width: 768px) {
+			height: 100px;
+		}
+	}
+}

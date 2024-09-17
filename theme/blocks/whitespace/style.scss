@@ -1,0 +1,13 @@
+.whitespace {
+	width: 100%;
+	background-color: transparent;
+	height: 40px;
+
+	@media (min-width: 768px) {
+		height: 80px;
+	}
+
+	@media (min-width: 1181px) {
+		height: 120px;
+	}
+}

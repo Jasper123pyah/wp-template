@@ -1,0 +1,147 @@
+.image-text-pink {
+	width: 100%;
+	height: max-content;
+	position: relative;
+	padding-bottom: 40px;
+
+	&--dark {
+		@media (max-width: 768px) {
+			background-color: #D5C2C1;
+		}
+	}
+	&--light {
+		@media (max-width: 768px) {
+			background-color: rgba(213,194,193, 0.5);
+		}
+	}
+
+	@media (min-width: 768px) {
+		padding-bottom: 60px;
+	}
+
+	@media (min-width: 1181px) {
+		padding-bottom: 80px;
+	}
+
+	&__image {
+		position: relative;
+		right: 0;
+		top: 0;
+		object-fit: cover;
+		object-position: center;
+		aspect-ratio: 705/804;
+		width: 100%;
+
+		@media (min-width: 768px) {
+			height: auto;
+			width: 40%;
+			margin-top: 40px;
+		}
+
+		@media (min-width: 1181px) {
+			height: 804px;
+			width: auto;
+			margin-top: 104px;
+		}
+	}
+
+	&__container {
+		@media (min-width: 768px) {
+			display: flex;
+			gap: 40px;
+		}
+
+		@media (min-width: 1181px) {
+			gap: 84px;
+		}
+	}
+
+
+	&__rectangle {
+		position: absolute;
+		height: 100%;
+		left: 0;
+		top: 0;
+		z-index: -1;
+		width: 100%;
+		display: none;
+
+		&--dark {
+			background-color: #D5C2C1;
+
+		}
+		&--light {
+			background-color: rgba(213,194,193, 0.5);
+		}
+
+
+		@media (min-width: 1181px) {
+			display: block;
+			width: 0%;
+			height: 674px;
+		}
+	}
+
+	&__button {
+		margin-top: 50px;
+	}
+
+	&__content {
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		text-align: left;
+		padding-top: 40px;
+
+		@media (min-width: 768px) {
+			width: 647px;
+			padding-top: unset;
+		}
+
+		&--align {
+			justify-content: center;
+		}
+
+		h2 {
+			color: #AD946D;
+		}
+
+		h3 {
+			color: #9D585C;
+		}
+
+		p {
+			color: #655C4E;
+			margin-bottom: 40px;
+		}
+
+		ul {
+			margin: unset;
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
+			padding-left: unset;
+			@media (min-width: 768px) {
+				gap: 24px;
+			}
+			li {
+				color: #655C4E;
+				padding-left: 40px;
+				list-style-type: none;
+
+				&:before {
+					content: '';
+					color: #655C4E;
+					font-size: 19px;
+					float: left;
+					display: list-item;
+					list-style-type: disc;
+					list-style-position: inside;
+					width: 20px;
+					margin-left: -40px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,53 @@
+@import '../../assets/styles/common/variables.scss';
+@import '../../assets/styles/components/button.scss';
+.form {
+	background-color: #D5C2C1;
+	padding: 40px 0;
+	position: relative;
+	margin-bottom: 40px;
+	@media (min-width: 1181px) {
+		padding: 80px 0;
+		margin-bottom: 80px;
+	}
+	@media (min-width: 1181px) {
+		padding: 140px 0;
+		margin-bottom: 120px;
+	}
+	&__title {
+		color: #A31825;
+	}
+	&__wpform {
+		position: relative;
+		z-index: 1;
+
+		.wpforms {
+			&-field-label {
+				color: #655C4E !important;
+				font-size: 17px !important;
+				font-weight: 400 !important;
+				line-height: 32px !important;
+				letter-spacing: 0.2px !important;
+			}
+			&-submit-container {
+				button,input {
+					@extend .button;
+					@extend .button--primary;
+				}
+			}
+		}
+	}
+
+	&__flower {
+		right: 0;
+		bottom: 0;
+		opacity: 0.4;
+		position: absolute;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		aspect-ratio: 683/867;
+		height: 10%;
+		background-image: url("./assets/images/flower.svg");
+		z-index: 0;
+	}
+}

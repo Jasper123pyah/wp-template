@@ -1,0 +1,436 @@
+{
+    "key": "group_64d660ae9c9df",
+    "title": "Header",
+    "fields": [
+        {
+            "key": "field_64d660aee8cf0",
+            "label": "Header",
+            "name": "header",
+            "aria-label": "",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_64d660cde8cf1": {
+                    "key": "layout_64d660cde8cf1",
+                    "name": "header_home",
+                    "label": "Home",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_64d660f9e8cf2",
+                            "label": "Foto",
+                            "name": "image",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "Upload hier de foto",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "preview_size": "large"
+                        },
+                        {
+                            "key": "field_64f6f83a40777",
+                            "label": "Tekst",
+                            "name": "text",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_64d6616050d22",
+                            "label": "Knop",
+                            "name": "button",
+                            "aria-label": "",
+                            "type": "link",
+                            "instructions": "Kies hier de link en de tekst voor de knop.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_64d74cb980bf3": {
+                    "key": "layout_64d74cb980bf3",
+                    "name": "header_about",
+                    "label": "Over Esther",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_64d74ce480bf5",
+                            "label": "Foto",
+                            "name": "image",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "Upload hier de foto",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "preview_size": "large"
+                        },
+                        {
+                            "key": "field_64d74d0580bf6",
+                            "label": "Text",
+                            "name": "text",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "Vul hier de tekst in voor de header.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_64d74d3b80bf7",
+                            "label": "Knop",
+                            "name": "button",
+                            "aria-label": "",
+                            "type": "link",
+                            "instructions": "Vul hier de link en de tekst voor de knop in.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_64d780c77d37a": {
+                    "key": "layout_64d780c77d37a",
+                    "name": "header_product_overview",
+                    "label": "Productoverzicht",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_64d780f67d37c",
+                            "label": "Foto",
+                            "name": "image",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "Upload hier de foto voor de header.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "preview_size": "large"
+                        },
+                        {
+                            "key": "field_64d7810e7d37d",
+                            "label": "Titel",
+                            "name": "title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "De titel voor in het blok.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_64d7811e7d37e",
+                            "label": "Punten",
+                            "name": "list",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "De punten in het blok",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "min": 0,
+                            "max": 3,
+                            "collapsed": "field_64d781297d37f",
+                            "button_label": "Add Row",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_64d781297d37f",
+                                    "label": "Punt",
+                                    "name": "point",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_64d7811e7d37e"
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_64da0fd4623af": {
+                    "key": "layout_64da0fd4623af",
+                    "name": "header_product_detail",
+                    "label": "Product Detail",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_64da0fe2623b1",
+                            "label": "Foto",
+                            "name": "image",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "Upload hier de foto voor de header",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "preview_size": "large"
+                        },
+                        {
+                            "key": "field_64da0ff8623b2",
+                            "label": "Tekst",
+                            "name": "text",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "Vul hier de tekst in voor de header",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_64e08fd521887": {
+                    "key": "layout_64e08fd521887",
+                    "name": "header_contact",
+                    "label": "Contact",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_64e08fec21889",
+                            "label": "Foto",
+                            "name": "image",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "Upload hier de foto.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "preview_size": "large"
+                        },
+                        {
+                            "key": "field_64e08fff2188a",
+                            "label": "Titel",
+                            "name": "title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Vul hier de titel in.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_64e090102188b",
+                            "label": "Paragraaf",
+                            "name": "paragraph",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "Vul hier de paragraaf in.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "rows": "",
+                            "placeholder": "",
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_64e0903b2188c",
+                            "label": "Social media kopje",
+                            "name": "sm_title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Vul hier de tekst in voor het kopje boven de social media knoppen.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "min": "",
+            "max": "",
+            "button_label": "Add Row"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1693915623
+}
