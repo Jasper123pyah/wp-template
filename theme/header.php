@@ -1,3 +1,29 @@
+<?php
+	$header_links_html = '';
+	if (have_rows('header_links', 'option')) {
+		$header_links_html .= '<div class="header-links">';
+		while (have_rows('header_links', 'option')) {
+			the_row();
+			$link = get_sub_field('link');
+			if ($link) {
+				$link_url = $link['url'];
+				$link_title = $link['title'];
+				$link_target = $link['target'] ? $link['target'] : '_self';
+				$header_links_html .= '<a href="' . esc_url($link_url) . '" target="' . esc_attr($link_target) . '">' . esc_html($link_title) . '</a>';
+			}
+		}
+		$header_links_html .= '</div>';
+	}
+
+	$special_link = get_field('special_link', 'option');
+	if ($special_link) {
+		$special_link_url = $special_link['url'];
+		$special_link_title = $special_link['title'];
+		$special_link_target = $special_link['target'] ? $special_link['target'] : '_self';
+		$header_links_html .= '<a class="special-link" href="' . esc_url($special_link_url) . '" target="' . esc_attr($special_link_target) . '">' . esc_html($special_link_title) . '</a>';
+	}
+?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -7,79 +33,40 @@
 </head>
 <body <?php body_class(); ?>>
 
-<header class="header">
+<header class="navbar">
 	<div class="container">
-		<div class="header-container">
-			<a class="header__logo" href="<?= esc_url( home_url( '/' ) ); ?>">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/esther-logo.svg" alt="Esther Lases Logo">
+		<div class="navbar__container">
+			<a class="navbar__logo" href="<?= esc_url( home_url( '/' ) ); ?>">
+				<img src="<?= get_template_directory_uri(); ?>/assets/images/logo.svg" alt="Logo">
 			</a>
-			<a class="header__burger">
+			<a class="navbar__burger">
 				<img src="<?= get_template_directory_uri(); ?>/assets/images/hamburger.svg" alt="burger">
 			</a>
 			<nav class="navigation">
 				<?php
-				wp_nav_menu( [
-					'theme_location' => 'primary',
-					'container'      => false,
-					'menu_id'        => 'primary-menu',
-				] );
+					echo $header_links_html;
 				?>
 			</nav>
 		</div>
 	</div>
 </header>
 
-<?php
-$phone_number           = get_field( 'phone_number', 'option' );
-$email                  = get_field( 'email', 'option' );
-$street_name_and_number = get_field( 'street_name_and_number', 'option' );
-$postal_code_and_city   = get_field( 'postal_code_and_city', 'option' );
-$kvk_number             = get_field( 'kvk_number', 'option' );
-$social_media           = get_field( 'social_media', 'option' );
-$contact_url            = get_field( 'contact_url', 'option' );
-$privacy_url            = get_field( 'privacy_url', 'option' );
-$terms_url              = get_field( 'terms_url', 'option' );
-?>
-
-<div class="mobile-menu">
+<div class="navbar--mobile">
 	<div class="container">
-		<div class="mobile-menu__top">
-			<a class="mobile-menu__logo" href="<?= esc_url( home_url( '/' ) ); ?>">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/esther-logo.svg" alt="Esther Lases">
+		<div class="navbar--mobile__top">
+			<a class="navbar--mobile__logo" href="<?= esc_url( home_url( '/' ) ); ?>">
+				<img src="<?= get_template_directory_uri(); ?>/assets/images/logo.svg" alt="Logo">
 			</a>
-			<a class="mobile-menu__close">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/close-red.svg" alt="close">
+			<a class="navbar--mobile__close">
+				<img src="<?= get_template_directory_uri(); ?>/assets/images/close.svg" alt="close">
 			</a>
 		</div>
 
-		<div class="mobile-menu__content">
-			<div class="mobile-menu__navigation">
+		<div class="navbar--mobile__content">
+			<div class="navbar--mobile__navigation">
 				<?php
-				wp_nav_menu( [
-					'theme_location' => 'primary',
-					'container'      => false,
-					'menu_id'        => 'primary-menu',
-				] );
+					echo $header_links_html;
 				?>
-			</div>
-			<div class="mobile-menu__bottom">
-				<div class="footer-top__icons">
-					<?php foreach ( $social_media as $social_media_item ) : ?>
-						<a target="_blank" href="<?= esc_url( $social_media_item['url'] ); ?>">
-							<img src="<?= esc_url( $social_media_item['icon'] ); ?>" alt="<?= esc_attr( $social_media_item['title'] ); ?>">
-						</a>
-					<?php endforeach; ?>
-				</div>
-				<div class="footer-bottom__content">
-					<a href="<?= esc_url( $privacy_url ) ?>">Privacyverklaring</a>
-					|
-					<a href="<?= esc_url( $terms_url ) ?>">Algemene voorwaarden</a>
-					|
-					<p>
-						KVK <?= esc_html( $kvk_number ); ?>
-					</p>
-					<p>© Copyright Esther Lases <?= date( "Y" ); ?></p>
-				</div>
 			</div>
 		</div>
 	</div>

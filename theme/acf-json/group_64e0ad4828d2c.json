@@ -17,7 +17,8 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_64e0adf7d0e0f",
@@ -133,7 +134,8 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_64e0ae48d0e15",
@@ -149,40 +151,15 @@
                 "class": "",
                 "id": ""
             },
+            "acfe_repeater_stylised_button": 0,
             "layout": "table",
             "pagination": 0,
             "min": 0,
             "max": 0,
             "collapsed": "",
-            "button_label": "Add Row",
+            "button_label": "Nieuwe Social Media",
             "rows_per_page": 20,
             "sub_fields": [
-                {
-                    "key": "field_64e0ae76d0e16",
-                    "label": "Icoon",
-                    "name": "icon",
-                    "aria-label": "",
-                    "type": "image",
-                    "instructions": "Upload hier het icoon voor de social media.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "url",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": "",
-                    "preview_size": "thumbnail",
-                    "parent_repeater": "field_64e0ae48d0e15"
-                },
                 {
                     "key": "field_64e0ae87d0e17",
                     "label": "Titel",
@@ -220,8 +197,117 @@
                     },
                     "return_format": "url",
                     "parent_repeater": "field_64e0ae48d0e15"
+                },
+                {
+                    "key": "field_66f15bac8e69d",
+                    "label": "Icoon",
+                    "name": "icon",
+                    "aria-label": "",
+                    "type": "font-awesome",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "icon_sets": [
+                        "solid",
+                        "regular",
+                        "brands"
+                    ],
+                    "custom_icon_set": "",
+                    "default_label": "&lt;i class=\"fa-classic fa-brands fa-facebook fa-fw\"&gt;&lt;\/i&gt; Facebook",
+                    "default_value": "{\"family\" : \"classic\", \"style\" : \"brands\", \"id\" : \"facebook\", \"label\" : \"Facebook\", \"unicode\" : \"f09a\"}",
+                    "save_format": "element",
+                    "allow_null": 0,
+                    "show_preview": 1,
+                    "enqueue_fa": 0,
+                    "allow_in_bindings": 0,
+                    "fa_live_preview": "",
+                    "choices": [],
+                    "parent_repeater": "field_64e0ae48d0e15"
                 }
             ]
+        },
+        {
+            "key": "field_66f17556acb0a",
+            "label": "Header links",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_66f17564acb0b",
+            "label": "Links",
+            "name": "header_links",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_repeater_stylised_button": 0,
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_66f1757aacb0c",
+                    "label": "Link",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "allow_in_bindings": 1,
+                    "parent_repeater": "field_66f17564acb0b"
+                }
+            ]
+        },
+        {
+            "key": "field_66f1758dacb0d",
+            "label": "Speciale link",
+            "name": "special_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "Deze link wordt helemaal rechts in de navigatiebalk getoond als knop.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 1
         },
         {
             "key": "field_64f6eb172833d",
@@ -238,14 +324,15 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_64f6eb242833e",
             "label": "Contact URL",
             "name": "contact_url",
             "aria-label": "",
-            "type": "page_link",
+            "type": "link",
             "instructions": "Kies hier de url voor de contact knop in de footer.",
             "required": 0,
             "conditional_logic": 0,
@@ -254,19 +341,15 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": "",
-            "post_status": "",
-            "taxonomy": "",
-            "allow_archives": 1,
-            "multiple": 0,
-            "allow_null": 0
+            "return_format": "array",
+            "allow_in_bindings": 1
         },
         {
             "key": "field_64f6eb492833f",
             "label": "Privacy URL",
             "name": "privacy_url",
             "aria-label": "",
-            "type": "page_link",
+            "type": "link",
             "instructions": "Kies hier de url voor de privacy link in de footer.",
             "required": 0,
             "conditional_logic": 0,
@@ -275,19 +358,15 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": "",
-            "post_status": "",
-            "taxonomy": "",
-            "allow_archives": 1,
-            "multiple": 0,
-            "allow_null": 0
+            "return_format": "array",
+            "allow_in_bindings": 1
         },
         {
             "key": "field_64f6eb6828340",
             "label": "Algemene voorwaarden URL",
             "name": "terms_url",
             "aria-label": "",
-            "type": "page_link",
+            "type": "link",
             "instructions": "Kies hier de url voor de algemene voorwaarden link in de footer.",
             "required": 0,
             "conditional_logic": 0,
@@ -296,12 +375,295 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": "",
-            "post_status": "",
-            "taxonomy": "",
-            "allow_archives": 1,
-            "multiple": 0,
-            "allow_null": 0
+            "return_format": "array",
+            "allow_in_bindings": 1
+        },
+        {
+            "key": "field_66f1585dd1550",
+            "label": "Styling",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_66f15c0899e92",
+            "label": "Kleuren",
+            "name": "colors",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "sub_fields": [
+                {
+                    "key": "field_66f1591b78156",
+                    "label": "Primaire Kleur",
+                    "name": "primary_color",
+                    "aria-label": "",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#1e90ff",
+                    "enable_opacity": 0,
+                    "return_format": "string",
+                    "allow_in_bindings": 0
+                },
+                {
+                    "key": "field_66f1594c78157",
+                    "label": "Secundaire Kleur",
+                    "name": "secondary_color",
+                    "aria-label": "",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#202020",
+                    "enable_opacity": 0,
+                    "return_format": "string",
+                    "allow_in_bindings": 0
+                }
+            ],
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large"
+        },
+        {
+            "key": "field_66f15c3999e93",
+            "label": "Iconen",
+            "name": "icons",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "sub_fields": [
+                {
+                    "key": "field_66f15b4f39705",
+                    "label": "Telefoon Icoon",
+                    "name": "phone_icon",
+                    "aria-label": "",
+                    "type": "font-awesome",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "icon_sets": [
+                        "solid",
+                        "regular",
+                        "brands"
+                    ],
+                    "custom_icon_set": "",
+                    "default_label": "&lt;i class=\"fa-classic fa-solid fa-envelope fa-fw\"&gt;&lt;\/i&gt; Envelope",
+                    "default_value": "{\"family\" : \"classic\", \"style\" : \"solid\", \"id\" : \"phone\", \"label\" : \"Phone\", \"unicode\" : \"f095\"}",
+                    "save_format": "element",
+                    "allow_null": 0,
+                    "show_preview": 1,
+                    "enqueue_fa": 0,
+                    "allow_in_bindings": 0,
+                    "fa_live_preview": "",
+                    "choices": []
+                },
+                {
+                    "key": "field_66f15a89ced11",
+                    "label": "Mail Icoon",
+                    "name": "mail_icon",
+                    "aria-label": "",
+                    "type": "font-awesome",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "icon_sets": [
+                        "solid",
+                        "regular",
+                        "brands"
+                    ],
+                    "custom_icon_set": "",
+                    "default_label": "&lt;i class=\"fa-classic fa-solid fa-envelope fa-fw\"&gt;&lt;\/i&gt; Envelope",
+                    "default_value": "{\"family\" : \"classic\", \"style\" : \"solid\", \"id\" : \"envelope\", \"label\" : \"Envelope\", \"unicode\" : \"f0e0\"}",
+                    "save_format": "element",
+                    "allow_null": 0,
+                    "show_preview": 1,
+                    "enqueue_fa": 0,
+                    "allow_in_bindings": 0,
+                    "fa_live_preview": "",
+                    "choices": []
+                },
+                {
+                    "key": "field_66f171460c54b",
+                    "label": "Burger Menu",
+                    "name": "burger_menu",
+                    "aria-label": "",
+                    "type": "font-awesome",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "icon_sets": [
+                        "solid",
+                        "regular",
+                        "brands"
+                    ],
+                    "custom_icon_set": "",
+                    "default_label": "&lt;i class=\"fa-classic fa-solid fa-x fa-fw\"&gt;&lt;\/i&gt; X",
+                    "default_value": "{\"family\" : \"classic\", \"style\" : \"solid\", \"id\" : \"bars\", \"label\" : \"Bars\", \"unicode\" : \"f0c9\"}",
+                    "save_format": "element",
+                    "allow_null": 0,
+                    "show_preview": 1,
+                    "enqueue_fa": 0,
+                    "allow_in_bindings": 0,
+                    "fa_live_preview": "",
+                    "choices": []
+                },
+                {
+                    "key": "field_66f171750c54c",
+                    "label": "Sluiten (Kruis)",
+                    "name": "close",
+                    "aria-label": "",
+                    "type": "font-awesome",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "icon_sets": [
+                        "solid",
+                        "regular",
+                        "brands"
+                    ],
+                    "custom_icon_set": "",
+                    "default_label": "&lt;i class=\"fa-classic fa-solid fa-x fa-fw\"&gt;&lt;\/i&gt; X",
+                    "default_value": "{\"family\" : \"classic\", \"style\" : \"solid\", \"id\" : \"x\", \"label\" : \"X\", \"unicode\" : \"58\"}",
+                    "save_format": "element",
+                    "allow_null": 0,
+                    "show_preview": 1,
+                    "enqueue_fa": 0,
+                    "allow_in_bindings": 0,
+                    "fa_live_preview": "",
+                    "choices": []
+                }
+            ],
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large"
+        },
+        {
+            "key": "field_66f161490eaa2",
+            "label": "Fonts",
+            "name": "fonts",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "Vul de font in zoals deze op https:\/\/fonts.google.com\/ wordt getoond. Dus vul bijvoorbeeld 'Roboto' in voor https:\/\/fonts.google.com\/specimen\/Roboto.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "sub_fields": [
+                {
+                    "key": "field_66f161550eaa3",
+                    "label": "Heading Font",
+                    "name": "heading_font",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_66f161630eaa4",
+                    "label": "Paragraph Font",
+                    "name": "paragraph_font",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                }
+            ],
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large"
         }
     ],
     "location": [
@@ -322,5 +684,12 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1693903740
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1727101300
 }

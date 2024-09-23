@@ -1,8 +1,12 @@
+// Common
 @import 'common/base';
 @import 'common/variables';
 @import 'common/overwrite';
+
+// Components
 @import 'components/container';
-@import 'components/header';
 @import 'components/footer';
 @import 'components/button';
-@import 'components/mobile-menu';
+@import 'components/navbar';
+
+// Blocks

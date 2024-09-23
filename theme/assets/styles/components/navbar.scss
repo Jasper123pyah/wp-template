@@ -1,0 +1,18 @@
+.navbar {
+    height: 102px;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &--mobile {
+        display: none;
+        
+
+        @media (max-width: 768px) {
+            display: block;
+        }
+    }
+}
