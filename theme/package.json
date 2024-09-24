@@ -2,7 +2,6 @@
   "name": "elecho-theme",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "dev": "vite build --watch",
     "build": "vite build",
@@ -12,25 +11,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.22.10",
-    "@babel/preset-env": "^7.22.10",
-    "@babel/preset-react": "^7.22.5",
-    "@vitejs/plugin-legacy": "^5.4.2",
-    "babel-loader": "^9.1.3",
-    "browser-sync": "^2.29.3",
-    "css-loader": "^6.8.1",
-    "file-loader": "^6.2.0",
-    "glob": "^10.3.3",
-    "sass": "^1.79.2",
-    "style-loader": "^3.3.3",
-    "vite": "^5.4.6",
-    "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4",
-    "webpack-stream": "^7.0.0"
-  },
-  "dependencies": {
-    "install": "^0.13.0",
-    "motion": "^10.16.2",
-    "npm": "^10.8.3"
+    "vite": "^5.4.6"
   }
 }

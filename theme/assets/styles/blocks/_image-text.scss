@@ -1,0 +1,43 @@
+.image-text {
+    padding: 64px 0;
+
+    @media (max-width: 768px) {
+        padding: 32px 0;
+    }
+
+    &.light {
+        background-color: $light-color;
+        color: $dark-color;
+    }
+    &.dark {
+        background-color: $dark-color;
+        color: $light-color;
+    }
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+
+    }
+
+    &__image {
+        width: 100%;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            aspect-ratio: 1/1;
+            border-radius: 16px;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}

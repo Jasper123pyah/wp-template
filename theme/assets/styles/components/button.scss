@@ -4,7 +4,6 @@ button {
 	border: none;
   }
 .button {
-	font-family: 'Karla', sans-serif;
 	font-weight: 600;
 	border: 2px solid $primary-color;
 	background-color: $primary-color;
@@ -40,10 +39,10 @@ button {
 	  }
 
 	  &.light-background {
-		color: $dark-color;
+		color: $primary-color;
 
 		&:hover {
-		  color: $dark-color;
+		  color: $light-color;
 		}
 	  }
 	}
@@ -55,42 +54,6 @@ button {
 	  &:hover {
 		background-color: $primary-color;
 		color: $light-color;
-	  }
-	}
-
-
-  
-	&.arrow {
-	  background-color: transparent;
-	  border: none;
-	  color: $dark-color;
-	  padding: 0;
-	  display: flex;
-	  gap: 8px;
-	  max-width: 70vw;
-  
-	  &:hover {
-		&:after {
-		  transform: translateX(8px);
-		}
-	  }
-  
-	  &:after {
-		content: '';
-		background-image: url('/assets/icons/general/arrow-right.svg');
-		background-size: cover;
-		background-repeat: no-repeat;
-		width: 52px;
-		height: 28px;
-		display: inline-block;
-		transition: transform 0.3s ease-in-out;
-		flex-shrink: 0;
-		margin-left: auto;
-	  }
-  
-	  span {
-		white-space: normal;
-		overflow-wrap: break-word;
 	  }
 	}
 }
