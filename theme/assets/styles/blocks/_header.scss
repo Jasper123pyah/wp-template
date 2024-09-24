@@ -1,0 +1,179 @@
+.header {
+    color: $primary-color;
+    
+    &--dark_bg {
+        position: relative;
+        .header__image {
+            filter: brightness(50%);
+            width: 100%;
+            height: 80vh;
+            object-fit: cover;
+        }
+        .header__content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: $light-color;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+    }
+
+    &--card {  
+        height: 90vh;
+
+        @media (max-width: 959px) {
+            height: 70vh;
+        }
+
+        @media (max-width: 599px) {
+            height: 60vh;
+        }
+      
+        .header__image {
+            position: absolute;
+            width: 100%;
+            height: 80vh;
+            object-fit: cover;
+
+            @media (max-width: 959px) {
+                height: 60vh;
+            }
+
+            @media (max-width: 599px) {
+                height: 40vh;
+            }
+        }
+
+        .header__container {
+            height: 80vh;
+
+            @media (max-width: 959px) {
+                height: 60vh;
+            }
+    
+            @media (max-width: 599px) {
+                height: 40vh;
+            }
+    
+            @media (max-width: 479px) {
+                height: 30vh;
+            }
+        }
+
+        .header__content {
+            position: absolute;
+            bottom: -10%;
+            right: 0;
+            background: rgba($dark-color, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 10px;
+            color: $light-color;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 40vw;
+
+            @media (max-width: 959px) {
+                width: 60vw;
+                padding: 20px;
+                right: 5%;
+            }
+
+            @media (max-width: 599px) {
+                width: 80vw;
+                padding: 20px;
+                margin: 0 auto;
+                right: 50%;
+                transform: translateX(50%);
+                gap: 10px;
+                bottom: -40%;
+            }
+
+            @media (max-width: 479px) {
+                width: 90vw;
+                padding: 10px;
+                margin: 0 auto;
+                bottom: -100%;
+            }
+        }
+    }
+
+    &--text_image {
+        display: flex;
+        align-items: center;
+        height: 80vh;
+
+        @media (max-width: 959px) {
+            position: relative;
+            display: block;
+            height: auto;
+        }
+
+        .header__image {
+            width: 50%;
+            height: 100%;
+            object-fit: cover;
+
+            @media (max-width: 959px) {
+                filter: brightness(50%);
+                width: 100%;
+                height: 80vh;
+            }
+        }
+
+        .header__content {
+            width: 50%;
+            padding: 20px;
+            color: $dark-color;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            @media (max-width: 959px) {
+                z-index: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: $light-color;
+                padding: 0;
+                width: auto;
+            }
+        
+            @media (min-width: 960px) and (max-width: 1279px) {
+                padding-left: 60px;
+            }
+        
+            @media (min-width: 1280px) {
+                padding-left: 80px;
+            }
+        }
+    }
+
+    &__title {
+        margin: unset;
+    }
+
+    &__subtitle {
+        margin: unset;
+    }
+
+    &__content {
+        padding: 20px;
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 10px;
+    }
+}

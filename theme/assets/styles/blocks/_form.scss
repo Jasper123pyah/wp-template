@@ -1,5 +1,3 @@
-@import '../../assets/styles/common/variables.scss';
-@import '../../assets/styles/components/button.scss';
 .form {
 	background-color: #D5C2C1;
 	padding: 40px 0;
@@ -31,23 +29,8 @@
 			&-submit-container {
 				button,input {
 					@extend .button;
-					@extend .button--primary;
 				}
 			}
 		}
-	}
-
-	&__flower {
-		right: 0;
-		bottom: 0;
-		opacity: 0.4;
-		position: absolute;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: contain;
-		aspect-ratio: 683/867;
-		height: 10%;
-		background-image: url("./assets/images/flower.svg");
-		z-index: 0;
 	}
 }

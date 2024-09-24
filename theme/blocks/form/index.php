@@ -15,4 +15,3 @@ $form_shortcode = "[wpforms id=" . get_sub_field( 'shortcode' ) . "]";
 	</div>
 	<div id="flower-form" class="form__flower"></div>
 </div>
-
