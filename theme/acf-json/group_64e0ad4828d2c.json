@@ -328,6 +328,49 @@
             "selected": 0
         },
         {
+            "key": "field_66f29e5c0b2c5",
+            "label": "Menu Links",
+            "name": "footer_links",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_repeater_stylised_button": 0,
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_66f29e5d0b2c6",
+                    "label": "Link",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "allow_in_bindings": 1,
+                    "parent_repeater": "field_66f29e5c0b2c5"
+                }
+            ]
+        },
+        {
             "key": "field_64f6eb242833e",
             "label": "Contact URL",
             "name": "contact_url",
@@ -544,7 +587,7 @@
                 {
                     "key": "field_66f15b4f39705",
                     "label": "Telefoon Icoon",
-                    "name": "phone_icon",
+                    "name": "phone",
                     "aria-label": "",
                     "type": "font-awesome",
                     "instructions": "",
@@ -574,7 +617,7 @@
                 {
                     "key": "field_66f15a89ced11",
                     "label": "Mail Icoon",
-                    "name": "mail_icon",
+                    "name": "mail",
                     "aria-label": "",
                     "type": "font-awesome",
                     "instructions": "",
@@ -757,5 +800,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1727171947
+    "modified": 1727176309
 }
