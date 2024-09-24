@@ -32,7 +32,7 @@
 					</a>
 				<?php endforeach; ?>
 				<?php if ($special_link) : ?>
-					<a href="<?= esc_url($special_link['url']); ?>" class="navigation__link navigation__link--special" <?= $special_link['target'] ? 'target="' . esc_attr($special_link['target']) . '"' : ''; ?>>
+					<a href="<?= esc_url($special_link['url']); ?>" class="button light-background" <?= $special_link['target'] ? 'target="' . esc_attr($special_link['target']) . '"' : ''; ?>>
 						<?= esc_html($special_link['title']); ?>
 					</a>
 				<?php endif; ?>

@@ -74,20 +74,4 @@
     @media (max-width: 768px) {
         display: none;
     }
-
-    &__link {
-        &--special {
-            background-color: $primary-color;
-            color: $light-color;
-            padding: 10px 22px;
-            border-radius: 100px;
-            transition: all 0.3s ease;
-            border: 2px solid $primary-color;
-
-            &:hover {
-                background-color: $light-color;
-                color: $primary-color;
-            }
-        }
-    }
 }

@@ -21,10 +21,10 @@ $second_button = get_sub_field('second_button');
             <?php endif; ?>
             <div class="header__buttons">
                 <?php if ($first_button): ?>
-                    <a href="<?= $first_button['url'] ?>" class="button"><?= $first_button['title'] ?></a>
+                    <a href="<?= $first_button['url'] ?>" class="button <?= $variant === 'text_image' ? 'light-background' : '' ?>"><?= $first_button['title'] ?></a>
                 <?php endif; ?>
                 <?php if ($second_button): ?>
-                    <a href="<?= $second_button['url'] ?>" class="button"><?= $second_button['title'] ?></a>
+                    <a href="<?= $second_button['url'] ?>" class="button <?= $variant === 'text_image' ? 'light-background' : '' ?>"><?= $second_button['title'] ?></a>
                 <?php endif; ?>
             </div>
         </div>
