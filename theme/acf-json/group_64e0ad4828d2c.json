@@ -223,7 +223,7 @@
                     "save_format": "element",
                     "allow_null": 0,
                     "show_preview": 1,
-                    "enqueue_fa": 0,
+                    "enqueue_fa": 1,
                     "allow_in_bindings": 0,
                     "fa_live_preview": "",
                     "choices": [],
@@ -397,6 +397,34 @@
             "selected": 0
         },
         {
+            "key": "field_66f285b3b6aa6",
+            "label": "Logo",
+            "name": "logo",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Upload hier je logo. Het is belangrijk dat dit een WEBP of PNG is. Je logo hoort geen achtergrond te hebben. Een WEBP is beter voor de snelheid van je website dan een PNG.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "uploader": "",
+            "return_format": "array",
+            "library": "all",
+            "acfe_thumbnail": 0,
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "webp, png",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
             "key": "field_66f15c0899e92",
             "label": "Kleuren",
             "name": "colors",
@@ -416,11 +444,11 @@
             "sub_fields": [
                 {
                     "key": "field_66f1591b78156",
-                    "label": "Primaire Kleur",
+                    "label": "Donkere Primaire Kleur",
                     "name": "primary_color",
                     "aria-label": "",
                     "type": "color_picker",
-                    "instructions": "",
+                    "instructions": "Dit is de hoofdkleur van je site. Deze wordt gebruikt voor bijvoorbeeld de knoppen en iconen. Dit is jouw merk kleur. Het contrast van deze kleur moet goed werken op lichte achtergronden. Kies dus een donkere kleur.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -435,11 +463,11 @@
                 },
                 {
                     "key": "field_66f1594c78157",
-                    "label": "Secundaire Kleur",
+                    "label": "Lichte Secundaire Kleur",
                     "name": "secondary_color",
                     "aria-label": "",
                     "type": "color_picker",
-                    "instructions": "",
+                    "instructions": "Dit is de tweede hoofdkleur van je site. Deze wordt gebruikt voor bijvoorbeeld de knoppen en iconen. Dit is jouw tweede merk kleur. Het contrast van deze kleur moet goed werken op donkere achtergronden. Kies dus een lichte kleur.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -448,6 +476,44 @@
                         "id": ""
                     },
                     "default_value": "#202020",
+                    "enable_opacity": 0,
+                    "return_format": "string",
+                    "allow_in_bindings": 0
+                },
+                {
+                    "key": "field_66f27a63ffdcb",
+                    "label": "Lichte Kleur",
+                    "name": "light_color",
+                    "aria-label": "",
+                    "type": "color_picker",
+                    "instructions": "Dit wordt gebruikt voor een lichte achtergrond of wanneer de achtergrond donker is voor de tekstkleur. Hou deze kleur dicht bij wit.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#FFFFFF",
+                    "enable_opacity": 0,
+                    "return_format": "string",
+                    "allow_in_bindings": 0
+                },
+                {
+                    "key": "field_66f27b60ffdcc",
+                    "label": "Donkere Kleur",
+                    "name": "dark_color",
+                    "aria-label": "",
+                    "type": "color_picker",
+                    "instructions": "Dit wordt gebruikt voor een donkere achtergrond of wanneer de achtergrond licht is voor de tekstkleur. Hou deze kleur dicht bij zwart.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#000000",
                     "enable_opacity": 0,
                     "return_format": "string",
                     "allow_in_bindings": 0
@@ -500,7 +566,7 @@
                     "save_format": "element",
                     "allow_null": 0,
                     "show_preview": 1,
-                    "enqueue_fa": 0,
+                    "enqueue_fa": 1,
                     "allow_in_bindings": 0,
                     "fa_live_preview": "",
                     "choices": []
@@ -530,7 +596,7 @@
                     "save_format": "element",
                     "allow_null": 0,
                     "show_preview": 1,
-                    "enqueue_fa": 0,
+                    "enqueue_fa": 1,
                     "allow_in_bindings": 0,
                     "fa_live_preview": "",
                     "choices": []
@@ -560,7 +626,7 @@
                     "save_format": "element",
                     "allow_null": 0,
                     "show_preview": 1,
-                    "enqueue_fa": 0,
+                    "enqueue_fa": 1,
                     "allow_in_bindings": 0,
                     "fa_live_preview": "",
                     "choices": []
@@ -590,7 +656,7 @@
                     "save_format": "element",
                     "allow_null": 0,
                     "show_preview": 1,
-                    "enqueue_fa": 0,
+                    "enqueue_fa": 1,
                     "allow_in_bindings": 0,
                     "fa_live_preview": "",
                     "choices": []
@@ -691,5 +757,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1727101300
+    "modified": 1727171947
 }

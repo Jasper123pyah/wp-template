@@ -1,1 +1,1 @@
-console.log('skibidi');
+import './components/header';

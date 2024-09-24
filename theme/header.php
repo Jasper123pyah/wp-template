@@ -1,27 +1,9 @@
 <?php
-	$header_links_html = '';
-	if (have_rows('header_links', 'option')) {
-		$header_links_html .= '<div class="header-links">';
-		while (have_rows('header_links', 'option')) {
-			the_row();
-			$link = get_sub_field('link');
-			if ($link) {
-				$link_url = $link['url'];
-				$link_title = $link['title'];
-				$link_target = $link['target'] ? $link['target'] : '_self';
-				$header_links_html .= '<a href="' . esc_url($link_url) . '" target="' . esc_attr($link_target) . '">' . esc_html($link_title) . '</a>';
-			}
-		}
-		$header_links_html .= '</div>';
-	}
-
+	$header_links = get_field('header_links', 'option');
+	$logo = get_field('logo', 'option');
+	$burger = get_field('icons', 'option')['burger_menu'];
+	$close = get_field('icons', 'option')['close'];
 	$special_link = get_field('special_link', 'option');
-	if ($special_link) {
-		$special_link_url = $special_link['url'];
-		$special_link_title = $special_link['title'];
-		$special_link_target = $special_link['target'] ? $special_link['target'] : '_self';
-		$header_links_html .= '<a class="special-link" href="' . esc_url($special_link_url) . '" target="' . esc_attr($special_link_target) . '">' . esc_html($special_link_title) . '</a>';
-	}
 ?>
 
 <!DOCTYPE html>
@@ -37,15 +19,23 @@
 	<div class="container">
 		<div class="navbar__container">
 			<a class="navbar__logo" href="<?= esc_url( home_url( '/' ) ); ?>">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/logo.svg" alt="Logo">
+				<img src="<?=$logo['url']?>" alt="<?=$logo['alt']?>">
 			</a>
-			<a class="navbar__burger">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/hamburger.svg" alt="burger">
+			<a class="navbar__burger navbar__icon" href="javascript:void(0);">
+				<?=$burger?>
 			</a>
 			<nav class="navigation">
-				<?php
-					echo $header_links_html;
-				?>
+				<?php foreach ($header_links as $link_item) : ?>
+					<?php $link = $link_item['link']; ?>
+					<a href="<?= esc_url($link['url']); ?>" class="navigation__link" <?= $link['target'] ? 'target="' . esc_attr($link['target']) . '"' : ''; ?>>
+						<?= esc_html($link['title']); ?>
+					</a>
+				<?php endforeach; ?>
+				<?php if ($special_link) : ?>
+					<a href="<?= esc_url($special_link['url']); ?>" class="navigation__link navigation__link--special" <?= $special_link['target'] ? 'target="' . esc_attr($special_link['target']) . '"' : ''; ?>>
+						<?= esc_html($special_link['title']); ?>
+					</a>
+				<?php endif; ?>
 			</nav>
 		</div>
 	</div>
@@ -54,19 +44,27 @@
 <div class="navbar--mobile">
 	<div class="container">
 		<div class="navbar--mobile__top">
-			<a class="navbar--mobile__logo" href="<?= esc_url( home_url( '/' ) ); ?>">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/logo.svg" alt="Logo">
+			<a class="navbar__logo navbar--mobile__logo" href="<?= esc_url( home_url( '/' ) ); ?>">
+				<img src="<?=$logo['url']?>" alt="<?=$logo['alt']?>">
 			</a>
-			<a class="navbar--mobile__close">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/close.svg" alt="close">
+			<button class="navbar--mobile__close navbar__icon" href="javascript:void(0);">
+				<?=$close?>
 			</a>
 		</div>
 
 		<div class="navbar--mobile__content">
 			<div class="navbar--mobile__navigation">
-				<?php
-					echo $header_links_html;
-				?>
+				<?php foreach ($header_links as $link_item) : ?>
+					<?php $link = $link_item['link']; ?>
+					<a href="<?= esc_url($link['url']); ?>" class="navbar--mobile__link" <?= $link['target'] ? 'target="' . esc_attr($link['target']) . '"' : ''; ?>>
+						<?= esc_html($link['title']); ?>
+					</a>
+				<?php endforeach; ?>
+				<?php if ($special_link) : ?>
+					<a href="<?= esc_url($special_link['url']); ?>" class="navbar--mobile__link" <?= $special_link['target'] ? 'target="' . esc_attr($special_link['target']) . '"' : ''; ?>>
+						<?= esc_html($special_link['title']); ?>
+					</a>
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>
