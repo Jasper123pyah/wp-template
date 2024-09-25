@@ -11,7 +11,7 @@ $banner_class = 'image-banner';
 if ($shade) {
     $banner_class .= ' image-banner--shaded';
 }
-$banner_class .= ' image-banner--text-' . $text_color;
+$banner_class .= " image-banner--text-{$text_color}";
 ?>
 
 <div class="<?= esc_attr($banner_class); ?>" style="background-image: url('<?= esc_url($background_image['url']); ?>');">
