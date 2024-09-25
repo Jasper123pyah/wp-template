@@ -1,11 +1,18 @@
 .accordion {
-    padding: 40px 0;
+    padding: 64px 0;
     transition: all 0.3s ease-in-out;
+
+    @media (max-width: 768px) {
+        padding: 32px 0;
+    }
 
     &__items {
         display: flex;
         flex-direction: column;
         gap: 16px;
+    }
+    &__title {
+        margin-top: 0;
     }
 
     &__item {
