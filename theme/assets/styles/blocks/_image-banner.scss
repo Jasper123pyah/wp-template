@@ -1,0 +1,58 @@
+.image-banner {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba($dark-color, 0);
+        transition: background-color 0.3s ease;
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 64px 0;
+        width: 100%;
+    }
+
+    &__title {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    &__subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 1rem;
+    }
+
+    &--shaded {
+        .image-banner__overlay {
+            background-color: rgba($dark-color, 0.4);
+        }
+    }
+
+    // Toepassing van $text_color
+    &--text-light {
+        color: $light-color;
+    }
+
+    &--text-dark {
+        color: $dark-color;
+    }
+}
