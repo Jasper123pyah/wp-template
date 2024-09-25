@@ -696,7 +696,7 @@
                 "layout_64f6f2ed0f7c4": {
                     "key": "layout_64f6f2ed0f7c4",
                     "name": "wysiwyg",
-                    "label": "Editor blok",
+                    "label": "Vrije tekst",
                     "display": "row",
                     "sub_fields": [
                         {
@@ -853,5 +853,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1727264938
+    "modified": 1727269910
 }
