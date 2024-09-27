@@ -1,26 +1,23 @@
 .form {
-	background-color: #D5C2C1;
-	padding: 40px 0;
+	background-color: $light-color;
+	padding: 64px 0;
 	position: relative;
-	margin-bottom: 40px;
-	@media (min-width: 1181px) {
-		padding: 80px 0;
-		margin-bottom: 80px;
+
+	@media (max-width:768px) {
+		padding: 32px 0;
 	}
-	@media (min-width: 1181px) {
-		padding: 140px 0;
-		margin-bottom: 120px;
-	}
+
 	&__title {
-		color: #A31825;
+		color: $dark-color;
 	}
+
 	&__wpform {
 		position: relative;
 		z-index: 1;
 
 		.wpforms {
 			&-field-label {
-				color: #655C4E !important;
+				color: $dark-color !important;
 				font-size: 17px !important;
 				font-weight: 400 !important;
 				line-height: 32px !important;
