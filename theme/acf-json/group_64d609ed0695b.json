@@ -643,10 +643,10 @@
                     "sub_fields": [
                         {
                             "key": "field_64e5df599f710",
-                            "label": "Titel",
-                            "name": "title",
+                            "label": "Formulier",
+                            "name": "form",
                             "aria-label": "",
-                            "type": "text",
+                            "type": "post_object",
                             "instructions": "Vul hier de titel van het formulier in.",
                             "required": 0,
                             "conditional_logic": 0,
@@ -655,62 +655,24 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "maxlength": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": ""
-                        },
-                        {
-                            "key": "field_64e5dc2d4a7d8",
-                            "label": "WP Forms Shortcode",
-                            "name": "shortcode",
-                            "aria-label": "",
-                            "type": "text",
-                            "instructions": "Kijk bij WPForms naar de Shortcode die bij het formulier staat en vul deze hier in, Je hoeft alleen het id in te vullen. Bijvoorbeeld bij [wpforms id=\"438\"] vul je 438 in.",
-                            "required": 1,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "maxlength": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": ""
-                        },
-                        {
-                            "key": "field_66f4118f3e005",
-                            "label": "Formulier",
-                            "name": "form",
-                            "aria-label": "",
-                            "type": "acfe_forms",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "forms": "",
-                            "field_type": "select",
-                            "default_value": [],
-                            "return_format": "name",
-                            "allow_null": 0,
+                            "post_type": [
+                                "form"
+                            ],
+                            "post_status": "",
+                            "taxonomy": "",
+                            "return_format": "object",
                             "multiple": 0,
-                            "ui": 0,
-                            "allow_in_bindings": 0,
-                            "choices": [],
-                            "ajax": 0,
-                            "placeholder": "",
-                            "search_placeholder": "",
-                            "layout": "",
-                            "toggle": 0,
-                            "allow_custom": 0,
-                            "other_choice": 0
+                            "save_custom": 0,
+                            "save_post_status": "publish",
+                            "acfe_bidirectional": {
+                                "acfe_bidirectional_enabled": "0"
+                            },
+                            "allow_null": 0,
+                            "allow_in_bindings": 1,
+                            "bidirectional": 0,
+                            "ui": 1,
+                            "bidirectional_target": [],
+                            "save_post_type": ""
                         }
                     ],
                     "min": "",
@@ -884,5 +846,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1727271336
+    "modified": 1727699104
 }
