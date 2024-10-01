@@ -11,6 +11,10 @@ add_action( 'init', 'register_menus' );
 function enqueue_vite_built_assets() {
     wp_enqueue_style('main-styles', get_template_directory_uri() . '/dist/main.css', array(), '1.0.0');
     wp_enqueue_script('main-scripts', get_template_directory_uri() . '/dist/main.js', array(), '1.0.0', true);
+    
+    // Voeg Swiper CSS en JS toe
+    wp_enqueue_style('swiper-styles', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), '11.0.0');
+    wp_enqueue_script('swiper-scripts', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_vite_built_assets');
 
@@ -71,11 +75,6 @@ function theme_disable_comments_everywhere() {
 }
 add_action( 'admin_init', 'theme_disable_comments_everywhere' );
 
-function enqueue_jquery() {
-    wp_enqueue_script( 'jquery' );
-}
-add_action( 'wp_enqueue_scripts', 'enqueue_jquery' );
-
 function custom_page_title($title) {
     return $title;
 }
@@ -83,29 +82,30 @@ add_filter('pre_get_document_title', 'custom_page_title');
 
 add_theme_support('title-tag');
 
-function generate_scss_variables() {
-    // Haal de kleuren groep op uit ACF opties
-    $colors = get_field('colors', 'option'); // 'option' geeft aan dat het uit de options pagina komt
+function generate_css_variables() {
+    $colors = get_field('colors', 'option');
 
-    // Controleer of de kleuren groep bestaat
     if ($colors) {
-        $scss = "";
+        $css = "<style id='theme-custom-colors'>\n:root {\n";
         foreach ($colors as $key => $value) {
-            $variable_name = '$' . strtolower(preg_replace('/_/', '-', $key));
-            $scss .= "{$variable_name}: {$value};\n";
+            $variable_name = '--' . strtolower(preg_replace('/_/', '-', $key));
+            $css .= "  {$variable_name}: {$value};\n";
+            
+            // Voeg RGB-waarden toe
+            $rgb = sscanf($value, "#%02x%02x%02x");
+            $css .= "  {$variable_name}-rgb: {$rgb[0]}, {$rgb[1]}, {$rgb[2]};\n";
         }
+        $css .= "}\n</style>";
 
-        $file_path = get_template_directory() . '/assets/styles/common/_variables.scss';
-
-        // Schrijf de SCSS-variabelen naar het bestand
-        file_put_contents($file_path, $scss);
+        return $css;
     }
-}
-add_action('acf/save_post', 'generate_scss_variables', 20);
 
-function generate_scss_variables_on_activation() {
-    generate_scss_variables();
+    return '';
 }
-add_action('after_switch_theme', 'generate_scss_variables_on_activation');
+
+function output_css_variables() {
+    echo generate_css_variables();
+}
+add_action('wp_head', 'output_css_variables', 100);
 
 ?>

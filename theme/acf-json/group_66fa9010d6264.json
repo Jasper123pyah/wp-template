@@ -47,7 +47,7 @@
         {
             "key": "field_66fa902d7e0b7",
             "label": "Velden",
-            "name": "velden",
+            "name": "fields",
             "aria-label": "",
             "type": "flexible_content",
             "instructions": "",
@@ -58,6 +58,7 @@
                 "class": "",
                 "id": ""
             },
+            "acfe_flexible_advanced": 0,
             "layouts": {
                 "layout_66fa903f75d93": {
                     "key": "layout_66fa903f75d93",
@@ -638,7 +639,6 @@
             "min": "",
             "max": "",
             "button_label": "Voeg veld toe",
-            "acfe_flexible_advanced": false,
             "acfe_flexible_stylised_button": false,
             "acfe_flexible_hide_empty_message": false,
             "acfe_flexible_empty_message": "",
@@ -705,5 +705,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1727699163
+    "modified": 1727771854
 }

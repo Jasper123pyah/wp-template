@@ -660,7 +660,7 @@
                             ],
                             "post_status": "",
                             "taxonomy": "",
-                            "return_format": "object",
+                            "return_format": "id",
                             "multiple": 0,
                             "save_custom": 0,
                             "save_post_status": "publish",
@@ -673,6 +673,536 @@
                             "ui": 1,
                             "bidirectional_target": [],
                             "save_post_type": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_thumbnail": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": "medium",
+                    "acfe_flexible_modal_edit_size": false,
+                    "acfe_flexible_category": false
+                },
+                "layout_66fbba23bc75b": {
+                    "key": "layout_66fbba23bc75b",
+                    "name": "cards",
+                    "label": "Kaarten",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_66fbba7dbc763",
+                            "label": "Variant",
+                            "name": "variant",
+                            "aria-label": "",
+                            "type": "button_group",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "review": "Review",
+                                "image": "Foto",
+                                "icon": "Icoon"
+                            },
+                            "default_value": "",
+                            "return_format": "value",
+                            "layout": "horizontal",
+                            "allow_null": 0
+                        },
+                        {
+                            "key": "field_abc_background",
+                            "label": "Achtergrond",
+                            "name": "background",
+                            "aria-label": "",
+                            "type": "button_group",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "light": "Licht",
+                                "dark": "Donker",
+                                "none": "Geen"
+                            },
+                            "default_value": "none",
+                            "return_format": "value",
+                            "layout": "horizontal",
+                            "allow_null": 0
+                        },
+                        {
+                            "key": "field_abc_alignment",
+                            "label": "Uitlijning",
+                            "name": "alignment",
+                            "aria-label": "",
+                            "type": "button_group",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "left": "Links",
+                                "center": "Gecentreerd"
+                            },
+                            "default_value": "left",
+                            "return_format": "value",
+                            "layout": "horizontal",
+                            "allow_null": 0
+                        },
+                        {
+                            "key": "field_abc_container_options",
+                            "label": "Container opties",
+                            "name": "container_options",
+                            "aria-label": "",
+                            "type": "button_group",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "carousel": "Carousel",
+                                "3_columns": "3 kolommen",
+                                "4_columns": "4 kolommen"
+                            },
+                            "default_value": "3_columns",
+                            "return_format": "value",
+                            "layout": "horizontal",
+                            "allow_null": 0
+                        },
+                        {
+                            "key": "field_abc_carousel_columns",
+                            "label": "Aantal kolommen in de carousel",
+                            "name": "carousel_columns",
+                            "aria-label": "",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_abc_container_options",
+                                        "operator": "==",
+                                        "value": "carousel"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 1,
+                            "min": 1,
+                            "max": 4,
+                            "allow_in_bindings": 1,
+                            "placeholder": "",
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_66fbba64bc762",
+                            "label": "Kaarten",
+                            "name": "cards",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "row",
+                            "button_label": "Kaart toevoegen",
+                            "min": 0,
+                            "max": 0,
+                            "rows_per_page": 20,
+                            "collapsed": "",
+                            "acfe_repeater_stylised_button": 0,
+                            "sub_fields": [
+                                {
+                                    "key": "field_66fbbb6fbc764",
+                                    "label": "Icoon",
+                                    "name": "icon",
+                                    "aria-label": "",
+                                    "type": "font-awesome",
+                                    "instructions": "",
+                                    "required": false,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_66fbba7dbc763",
+                                                "operator": "==",
+                                                "value": "icon"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "icon_sets": [
+                                        "solid",
+                                        "regular",
+                                        "brands"
+                                    ],
+                                    "save_format": "element",
+                                    "show_preview": 1,
+                                    "enqueue_fa": 0,
+                                    "allow_null": 0,
+                                    "default_value": "",
+                                    "default_label": "",
+                                    "fa_live_preview": "",
+                                    "choices": [],
+                                    "parent_repeater": "field_66fbba64bc762"
+                                },
+                                {
+                                    "key": "field_66fbbe93046e7",
+                                    "label": "Review Icoon",
+                                    "name": "review_icon",
+                                    "aria-label": "",
+                                    "type": "font-awesome",
+                                    "instructions": "",
+                                    "required": false,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_66fbba7dbc763",
+                                                "operator": "==",
+                                                "value": "review"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "icon_sets": [
+                                        "solid",
+                                        "regular",
+                                        "brands"
+                                    ],
+                                    "save_format": "element",
+                                    "show_preview": 1,
+                                    "enqueue_fa": 0,
+                                    "allow_null": 0,
+                                    "default_value": "",
+                                    "default_label": "",
+                                    "fa_live_preview": "",
+                                    "choices": [],
+                                    "parent_repeater": "field_66fbba64bc762"
+                                },
+                                {
+                                    "key": "field_66fbbebf046e8",
+                                    "label": "Aantal sterren",
+                                    "name": "review_stars",
+                                    "aria-label": "",
+                                    "type": "number",
+                                    "instructions": "",
+                                    "required": false,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_66fbba7dbc763",
+                                                "operator": "==",
+                                                "value": "review"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "min": 1,
+                                    "max": 5,
+                                    "default_value": "",
+                                    "step": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_66fbba64bc762"
+                                },
+                                {
+                                    "key": "field_66fbbee1046e9",
+                                    "label": "Foto",
+                                    "name": "image",
+                                    "aria-label": "",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": false,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_66fbba7dbc763",
+                                                "operator": "==",
+                                                "value": "image"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "preview_size": "medium",
+                                    "library": "all",
+                                    "min_width": 0,
+                                    "min_height": 0,
+                                    "min_size": 0,
+                                    "max_width": 0,
+                                    "max_height": 0,
+                                    "max_size": 0,
+                                    "mime_types": "",
+                                    "uploader": "",
+                                    "acfe_thumbnail": 0,
+                                    "parent_repeater": "field_66fbba64bc762"
+                                },
+                                {
+                                    "key": "field_66fbbbb1046e5",
+                                    "label": "Titel",
+                                    "name": "title",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": false,
+                                    "conditional_logic": false,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_66fbba64bc762"
+                                },
+                                {
+                                    "key": "field_66fbbbb7046e6",
+                                    "label": "Tekst",
+                                    "name": "text",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": false,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_66fbba7dbc763",
+                                                "operator": "==",
+                                                "value": "review"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_66fbba64bc762"
+                                },
+                                {
+                                    "key": "field_abc_subtitle",
+                                    "label": "Subtitel",
+                                    "name": "subtitle",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": false,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_66fbba7dbc763",
+                                                "operator": "!=",
+                                                "value": "review"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_66fbba64bc762"
+                                },
+                                {
+                                    "key": "field_abc_first_button",
+                                    "label": "Eerste knop",
+                                    "name": "first_button",
+                                    "aria-label": "",
+                                    "type": "link",
+                                    "instructions": "",
+                                    "required": false,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_66fbba7dbc763",
+                                                "operator": "!=",
+                                                "value": "review"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "parent_repeater": "field_66fbba64bc762"
+                                },
+                                {
+                                    "key": "field_abc_second_button",
+                                    "label": "Tweede knop",
+                                    "name": "second_button",
+                                    "aria-label": "",
+                                    "type": "link",
+                                    "instructions": "",
+                                    "required": false,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_66fbba7dbc763",
+                                                "operator": "!=",
+                                                "value": "review"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "parent_repeater": "field_66fbba64bc762"
+                                },
+                                {
+                                    "key": "field_66fbbf76046ea",
+                                    "label": "Reviewer Foto",
+                                    "name": "reviewer_image",
+                                    "aria-label": "",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": false,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_66fbba7dbc763",
+                                                "operator": "==",
+                                                "value": "review"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "preview_size": "medium",
+                                    "library": "all",
+                                    "min_width": 0,
+                                    "min_height": 0,
+                                    "min_size": 0,
+                                    "max_width": 0,
+                                    "max_height": 0,
+                                    "max_size": 0,
+                                    "mime_types": "",
+                                    "uploader": "",
+                                    "acfe_thumbnail": 0,
+                                    "parent_repeater": "field_66fbba64bc762"
+                                },
+                                {
+                                    "key": "field_66fbbf88046eb",
+                                    "label": "Reviewer naam",
+                                    "name": "reviewer_name",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": false,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_66fbba7dbc763",
+                                                "operator": "==",
+                                                "value": "review"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_66fbba64bc762"
+                                },
+                                {
+                                    "key": "field_66fbbf97046ec",
+                                    "label": "Review Datum",
+                                    "name": "review_date",
+                                    "aria-label": "",
+                                    "type": "date_picker",
+                                    "instructions": "",
+                                    "required": false,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_66fbba7dbc763",
+                                                "operator": "==",
+                                                "value": "review"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "display_format": "d\/m\/Y",
+                                    "return_format": "j F, Y",
+                                    "first_day": 1,
+                                    "parent_repeater": "field_66fbba64bc762"
+                                }
+                            ]
                         }
                     ],
                     "min": "",
@@ -846,5 +1376,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1727699104
+    "modified": 1727777671
 }

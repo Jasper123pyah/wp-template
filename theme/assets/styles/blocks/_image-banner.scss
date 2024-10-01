@@ -9,7 +9,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba($dark-color, 0);
+        background-color: rgba($dark-color-rgb, 0);
         transition: background-color 0.3s ease;
     }
 
@@ -43,11 +43,10 @@
 
     &--shaded {
         .image-banner__overlay {
-            background-color: rgba($dark-color, 0.4);
+            background-color: rgba($dark-color-rgb, 0.4);
         }
     }
 
-    // Toepassing van $text_color
     &--text-light {
         color: $light-color;
     }

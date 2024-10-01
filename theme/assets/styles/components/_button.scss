@@ -21,7 +21,8 @@ button {
 	margin: 6px;
   
 	&:hover {
-	  background-color: transparent;
+	  background-color: rgba($primary-color-rgb, 0.85);
+	  border-color: rgba($primary-color-rgb, 0.85);
 	  color: $light-color;
 	}
 
@@ -47,13 +48,4 @@ button {
 	  }
 	}
   
-	&.outline {
-	  background-color: transparent;
-	  color: $light-color;
-  
-	  &:hover {
-		background-color: $primary-color;
-		color: $light-color;
-	  }
-	}
 }

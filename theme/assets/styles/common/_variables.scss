@@ -1,4 +1,8 @@
-$primary-color: #1d6af9;
-$secondary-color: #709beb;
-$light-color: #ffffff;
-$dark-color: #000000;
+$primary-color: var(--primary-color);
+$secondary-color: var(--secondary-color);
+$light-color: var(--light-color);
+$dark-color: var(--dark-color);
+$primary-color-rgb: var(--primary-color-rgb);
+$secondary-color-rgb: var(--secondary-color-rgb);
+$light-color-rgb: var(--light-color-rgb);
+$dark-color-rgb: var(--dark-color-rgb);

@@ -98,7 +98,7 @@
             color: $light-color;
 
             &:hover {
-                background-color: rgba($dark-color, 0.9);
+                background-color: rgba($dark-color-rgb, 0.9);
             }
         }
 
@@ -114,10 +114,10 @@
 
         .accordion__item {
             border: 2px solid $secondary-color;
-            background-color: rgba($secondary-color, 0.1);
+            background-color: rgba($secondary-color-rgb, 0.1);
 
             &:hover {
-                background-color: rgba($secondary-color, 0.2);
+                background-color: rgba($secondary-color-rgb, 0.2);
             }
         }
 
@@ -132,11 +132,11 @@
         color: $dark-color;
 
         .accordion__item {
-            border: 2px solid $secondary-color;
+            border: 2px solid $primary-color;
             background-color: $light-color;
 
             &:hover {
-                background-color: rgba($secondary-color, 0.1);
+                background-color: rgba($primary-color-rgb, 0.1);
             }
         }
 
