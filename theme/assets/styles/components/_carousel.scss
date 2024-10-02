@@ -1,0 +1,80 @@
+.swiper-slide {
+    cursor: grab;
+
+    &:active {
+        cursor: grabbing;
+    }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    width: 48px;
+    height: 48px;
+    color: $primary-color;
+
+    @media (max-width: 991px) {
+        width: 32px;
+        height: 32px;
+
+        top: unset;
+        bottom: -48px;
+    }
+
+}
+
+.swiper-button-prev {
+    @media (min-width: 767px) {
+        &:hover {
+            transform: translateX(-5px);
+            transition: transform 0.3s ease-in-out;
+        }
+    }
+
+    @media (max-width: 991px) {
+        left: 30%;
+    }
+}
+
+.swiper-button-next {
+    @media (min-width: 767px) {
+        &:hover {
+            transform: translateX(5px);
+            transition: transform 0.3s ease-in-out;
+        }
+    }
+
+    @media (max-width: 991px) {
+        right: 30%;
+    }
+}
+
+.carousel.cards {
+    @media (max-width: 991px) {
+        padding-bottom: 64px;
+    }
+}
+
+
+.cards .swiper {
+    width: 100%;
+}
+
+.cards .swiper-slide {
+    display: flex;
+    height: auto;
+}
+
+.cards .swiper-slide .card {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
+.cards .swiper-wrapper {
+    display: flex;
+    align-items: stretch;
+
+    .cards .swiper-wrapper {
+        height: auto !important;
+    }
+}

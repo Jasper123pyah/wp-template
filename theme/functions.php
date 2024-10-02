@@ -9,14 +9,20 @@ function register_menus() {
 add_action( 'init', 'register_menus' );
 
 function enqueue_vite_built_assets() {
-    wp_enqueue_style('main-styles', get_template_directory_uri() . '/dist/main.css', array(), '1.0.0');
-    wp_enqueue_script('main-scripts', get_template_directory_uri() . '/dist/main.js', array(), '1.0.0', true);
-    
-    // Voeg Swiper CSS en JS toe
+    // Swiper CSS
     wp_enqueue_style('swiper-styles', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), '11.0.0');
+
+    // Main CSS
+    wp_enqueue_style('main-styles', get_template_directory_uri() . '/dist/main.css', array('swiper-styles'), '1.0.0');
+
+    // Swiper JS
     wp_enqueue_script('swiper-scripts', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11.0.0', true);
+
+    // Main JS
+    wp_enqueue_script('main-scripts', get_template_directory_uri() . '/dist/main.js', array('swiper-scripts'), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_vite_built_assets');
+
 
 function remove_posts_menu() {
     remove_menu_page( 'edit.php' );

@@ -10,7 +10,6 @@ button {
 	color: $light-color;
 	padding: clamp(8px, 2vw, 12px) clamp(16px, 3vw, 24px);
 	border-radius: 16px;
-	font-size: 18px;
 	line-height: 22px;
 	cursor: pointer;
 	transition: all 0.3s ease-in-out;
@@ -24,10 +23,6 @@ button {
 	  background-color: rgba($primary-color-rgb, 0.85);
 	  border-color: rgba($primary-color-rgb, 0.85);
 	  color: $light-color;
-	}
-
-	&.light-background:hover {
-	  color: $primary-color;
 	}
 
 	&.outline {
@@ -47,5 +42,4 @@ button {
 		}
 	  }
 	}
-  
 }
