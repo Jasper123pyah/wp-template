@@ -1,5 +1,6 @@
 .form {
 	background-color: $light-color;
+	color: $dark-color;
 	padding: 64px 0;
 	position: relative;
 
@@ -7,27 +8,43 @@
 		padding: 32px 0;
 	}
 
+
 	&__title {
-		color: $dark-color;
+		margin: 0;
 	}
 
-	&__wpform {
-		position: relative;
-		z-index: 1;
+	.form-group {
+		margin-bottom: 24px;
 
-		.wpforms {
-			&-field-label {
-				color: $dark-color !important;
-				font-size: 17px !important;
-				font-weight: 400 !important;
-				line-height: 32px !important;
-				letter-spacing: 0.2px !important;
-			}
-			&-submit-container {
-				button,input {
-					@extend .button;
-				}
-			}
+		label {
+			display: block;
+			margin-bottom: 8px;
+			font-weight: bold;
+		}
+
+		input[type="text"],
+		input[type="email"],
+		input[type="number"],
+		input[type="date"],
+		textarea,
+		select {
+			width: 100%;
+			padding: 8px;
+			border: 1px solid $dark-color;
+			border-radius: 4px;
+		}
+
+		textarea {
+			resize: vertical;
+		}
+
+		select[multiple] {
+			height: auto;
+		}
+
+		input[type="checkbox"],
+		input[type="radio"] {
+			margin-right: 8px;
 		}
 	}
 }
