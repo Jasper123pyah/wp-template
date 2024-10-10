@@ -1,6 +1,19 @@
 .navbar {
     padding: 32px 0;
 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: padding 0.3s ease;
+    background-color: $light-color;
+
+    &.scrolled {
+        padding: 16px 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
     &__container {
         height: 40px;
         display: flex;
