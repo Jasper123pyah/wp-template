@@ -13,3 +13,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+document.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    const scrollThreshold = 100;
+
+    function handleScroll() {
+    if (window.scrollY > scrollThreshold) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+        }
+    }
+
+    handleScroll();
+});
