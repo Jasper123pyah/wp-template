@@ -42,6 +42,63 @@
         }
     }
 
+    .navigation {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+
+        &__item {
+            position: relative;
+
+            &:hover .navigation__submenu {
+                display: block;
+            }
+        }
+
+        &__link {
+            text-decoration: none;
+            color: inherit;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+
+        &__submenu {
+            display: none;
+            position: absolute;
+            top: 10px;
+            left: 0;
+            background-color: $light-color;
+            padding: 10px 0;
+            list-style: none;
+            min-width: 200px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+            &-item {
+                padding: 8px 16px;
+
+                &:hover {
+                    background-color: $primary-color;
+
+                    .navigation__submenu-link {
+                        color: $light-color;
+                    }
+                }
+
+                .navigation__submenu-link {
+                    text-decoration: none;
+                    color: inherit;
+                    display: block;
+                }
+            }
+        }
+    }
+
     &--mobile {
         position: fixed;
         top: 0;
@@ -63,6 +120,37 @@
             display: flex;
             flex-direction: column;
             gap: 16px;
+
+            &__item {
+                &.has-submenu {
+                    .navbar--mobile__link {
+                        position: relative;
+
+                        &::after {
+                            content: "\f078";
+                            font-family: "Font Awesome 5 Free";
+                            font-weight: 900;
+                            margin-left: 10px;
+                        }
+                    }
+                }
+
+                .navbar--mobile__submenu {
+                    display: none;
+                    list-style: none;
+                    padding-left: 20px;
+
+                    &-item {
+                        padding: 8px 0;
+
+                        .navbar--mobile__submenu-link {
+                            text-decoration: none;
+                            color: inherit;
+                            display: block;
+                        }
+                    }
+                }
+            }
         }
 
         &__link {
@@ -76,15 +164,5 @@
                 display: block;
             }
         }
-    }
-}
-
-.navigation {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-
-    @media (max-width: 768px) {
-        display: none;
     }
 }

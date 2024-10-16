@@ -39,9 +39,9 @@
                                 "id": ""
                             },
                             "choices": {
-                                "dark_bg": "Tekst over een verduisterde achtergrondfoto",
-                                "card": "Foto met een kaart met tekst",
-                                "text_image": "Tekst links, foto rechts 50\/50"
+                                "dark_bg": "Tekst over een verduisterde achtergrond",
+                                "card": "Media met een kaart met tekst",
+                                "text_image": "Media links, foto rechts 50\/50"
                             },
                             "default_value": "dark_bg",
                             "return_format": "value",
@@ -50,14 +50,46 @@
                             "layout": "horizontal"
                         },
                         {
+                            "key": "field_670f9144f11b8",
+                            "label": "Media type",
+                            "name": "media_type",
+                            "aria-label": "",
+                            "type": "button_group",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "image": "Foto",
+                                "video": "Video"
+                            },
+                            "default_value": "image",
+                            "return_format": "value",
+                            "allow_null": 0,
+                            "allow_in_bindings": 0,
+                            "layout": "horizontal"
+                        },
+                        {
                             "key": "field_66f2a59d84352",
                             "label": "Foto",
                             "name": "image",
                             "aria-label": "",
                             "type": "image",
-                            "instructions": "Afhankelijk van de variant is het belangrijk dat je een vierkante of rechthoekige foto neemt. \r\nTekst links, foto rechts 50\/50 : Vierkante foto\r\nTekst over een verduisterde achtergrondfoto & Foto met een kaart met tekst : Rechthoekige foto",
+                            "instructions": "Afhankelijk van de variant is het belangrijk dat je een vierkante of rechthoekige foto neemt. \r\nTekst links, media rechts 50\/50 : Vierkante foto.\r\n\r\nTekst over een verduisterde achtergrond & Media met een kaart met tekst : Rechthoekige foto",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_670f9144f11b8",
+                                        "operator": "==",
+                                        "value": "image"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -76,6 +108,36 @@
                             "mime_types": "",
                             "allow_in_bindings": 1,
                             "preview_size": "medium"
+                        },
+                        {
+                            "key": "field_670f90f8f11b7",
+                            "label": "Video",
+                            "name": "video",
+                            "aria-label": "",
+                            "type": "file",
+                            "instructions": "Afhankelijk van de variant is het belangrijk dat je een vierkante of rechthoekige video neemt. \r\nTekst links, media rechts 50\/50 : Vierkante video.\r\n\r\nTekst over een verduisterde achtergrond & Media met een kaart met tekst : Rechthoekige video",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_670f9144f11b8",
+                                        "operator": "==",
+                                        "value": "video"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "100",
+                                "class": "",
+                                "id": ""
+                            },
+                            "uploader": "",
+                            "return_format": "array",
+                            "min_size": "",
+                            "max_size": "",
+                            "mime_types": "webm, mp4",
+                            "allow_in_bindings": 1,
+                            "library": "all"
                         },
                         {
                             "key": "field_66f2a5a684353",
@@ -168,7 +230,7 @@
                 "layout_66f2bbcba7ee8": {
                     "key": "layout_66f2bbcba7ee8",
                     "name": "image-text",
-                    "label": "Foto met tekst",
+                    "label": "Media met tekst",
                     "display": "row",
                     "sub_fields": [
                         {
@@ -220,14 +282,46 @@
                             "layout": "horizontal"
                         },
                         {
+                            "key": "field_670f9201995c0",
+                            "label": "Media type",
+                            "name": "media_type",
+                            "aria-label": "",
+                            "type": "button_group",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "image": "Foto",
+                                "video": "Video"
+                            },
+                            "default_value": "image",
+                            "return_format": "value",
+                            "allow_null": 0,
+                            "allow_in_bindings": 0,
+                            "layout": "horizontal"
+                        },
+                        {
                             "key": "field_66f2bbe5a7eea",
                             "label": "Foto",
                             "name": "image",
                             "aria-label": "",
                             "type": "image",
                             "instructions": "Upload hier een foto. Zorg ervoor dat deze (ongeveer) vierkant is.",
-                            "required": 1,
-                            "conditional_logic": 0,
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_670f9201995c0",
+                                        "operator": "==",
+                                        "value": "image"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -246,6 +340,36 @@
                             "mime_types": "",
                             "allow_in_bindings": 0,
                             "preview_size": "medium"
+                        },
+                        {
+                            "key": "field_670f9222995c1",
+                            "label": "Video",
+                            "name": "video",
+                            "aria-label": "",
+                            "type": "file",
+                            "instructions": "Upload hier een video. Zorg ervoor dat deze (ongeveer) vierkant is.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_670f9201995c0",
+                                        "operator": "==",
+                                        "value": "video"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "uploader": "",
+                            "return_format": "array",
+                            "min_size": "",
+                            "max_size": "",
+                            "mime_types": "webm, mp4",
+                            "allow_in_bindings": 1,
+                            "library": "all"
                         },
                         {
                             "key": "field_66f2bc0ca7eeb",
@@ -471,9 +595,33 @@
                 "layout_66f3e2605e970": {
                     "key": "layout_66f3e2605e970",
                     "name": "image-banner",
-                    "label": "Foto banner",
+                    "label": "Media banner",
                     "display": "row",
                     "sub_fields": [
+                        {
+                            "key": "field_670f924f995c3",
+                            "label": "Media type",
+                            "name": "media_type",
+                            "aria-label": "",
+                            "type": "button_group",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "image": "Foto",
+                                "video": "Video"
+                            },
+                            "default_value": "image",
+                            "return_format": "value",
+                            "allow_null": 0,
+                            "allow_in_bindings": 0,
+                            "layout": "horizontal"
+                        },
                         {
                             "key": "field_66f3e26c5e972",
                             "label": "Foto",
@@ -482,7 +630,15 @@
                             "type": "image",
                             "instructions": "Zorg ervoor dat deze foto ongeveer een aspect ratio van 10\/1 heeft voor de beste uitkomst. Dus breed en niet te hoog.",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_670f924f995c3",
+                                        "operator": "==",
+                                        "value": "image"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -501,6 +657,36 @@
                             "mime_types": "",
                             "allow_in_bindings": 0,
                             "preview_size": "medium"
+                        },
+                        {
+                            "key": "field_670f925f995c4",
+                            "label": "Video",
+                            "name": "video",
+                            "aria-label": "",
+                            "type": "file",
+                            "instructions": "Zorg ervoor dat deze video ongeveer een aspect ratio van 10\/1 heeft voor de beste uitkomst. Dus breed en niet te hoog.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_670f924f995c3",
+                                        "operator": "==",
+                                        "value": "video"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "uploader": "",
+                            "return_format": "array",
+                            "min_size": "",
+                            "max_size": "",
+                            "mime_types": "webm, mp4",
+                            "allow_in_bindings": 1,
+                            "library": "all"
                         },
                         {
                             "key": "field_66f3e2bb3296d",
@@ -1405,5 +1591,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1727864158
+    "modified": 1729075706
 }

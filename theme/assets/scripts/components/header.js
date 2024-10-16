@@ -12,6 +12,16 @@ document.addEventListener('DOMContentLoaded', function() {
             mobileMenu.classList.remove('open');
         });
     }
+
+    const submenuToggles = document.querySelectorAll('.navbar--mobile__item.has-submenu > .navbar--mobile__link');
+
+    submenuToggles.forEach(function(toggle) {
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            const submenu = this.nextElementSibling;
+            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+        });
+    });
 });
 
 document.addEventListener('scroll', function() {

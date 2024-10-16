@@ -1,7 +1,7 @@
 <?php
 $title = get_sub_field('title');
 $subtitle = get_sub_field('subtitle');
-$background_image = get_sub_field('image');
+$media_type = get_sub_field('media_type');
 $first_button = get_sub_field('first_button');
 $second_button = get_sub_field('second_button');
 $shade = get_sub_field('image_shade');
@@ -12,9 +12,27 @@ if ($shade) {
     $banner_class .= ' image-banner--shaded';
 }
 $banner_class .= " image-banner--text-{$text_color}";
+
+if ($media_type == 'image') {
+    $media_url = get_sub_field('image')['url'];
+    $media_alt = get_sub_field('image')['alt'];
+} elseif ($media_type == 'video') {
+    $media_url = get_sub_field('video')['url'];
+}
 ?>
 
-<div class="<?= esc_attr($banner_class); ?>" style="background-image: url('<?= esc_url($background_image['url']); ?>');">
+<div class="<?= esc_attr($banner_class); ?>">
+    <?php if ($media_url): ?>
+        <div class="image-banner__media">
+            <?php if ($media_type == 'image'): ?>
+                <img src="<?= esc_url($media_url); ?>" alt="<?= esc_attr($media_alt); ?>" class="image-banner__media-element">
+            <?php elseif ($media_type == 'video'): ?>
+                <video autoplay muted loop class="image-banner__media-element">
+                    <source src="<?= esc_url($media_url); ?>" type="video/mp4">
+                </video>
+            <?php endif; ?>
+        </div>
+    <?php endif; ?>
     <div class="image-banner__overlay"></div>
     <div class="container">
         <div class="image-banner__content">

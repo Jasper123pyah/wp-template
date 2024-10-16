@@ -114,4 +114,97 @@ function output_css_variables() {
 }
 add_action('wp_head', 'output_css_variables', 100);
 
+
+function handle_custom_form_submission() {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['custom_form_id'])) {
+        // Controleer de nonce voor beveiliging
+        if (!isset($_POST['custom_form_nonce_field']) || !wp_verify_nonce($_POST['custom_form_nonce_field'], 'custom_form_nonce_action')) {
+            // Ongeldige nonce, verwerk het formulier niet
+            return;
+        }
+
+        $form_id = intval($_POST['custom_form_id']);
+
+        // Haal de formulier velden op
+        $fields = get_field('fields', $form_id);
+
+        if (!$fields) {
+            return;
+        }
+
+        // Verwerk de formuliergegevens
+        $errors = array();
+        $data = array();
+        $user_email = '';
+
+        foreach ($fields as $field) {
+            $field_name = sanitize_title($field['title']);
+            $field_value = isset($_POST[$field_name]) ? sanitize_text_field($_POST[$field_name]) : '';
+
+            // Controleer of het veld verplicht is
+            $is_required = isset($field['required']) && $field['required'];
+
+            if ($is_required && empty($field_value)) {
+                $errors[$field_name] = 'Het veld "' . $field['title'] . '" is verplicht.';
+            }
+
+            $data[$field_name] = $field_value;
+
+            // Als dit een e-mailveld is, sla het e-mailadres van de gebruiker op
+            if ($field['acf_fc_layout'] == 'email') {
+                $user_email = sanitize_email($field_value);
+            }
+        }
+
+        if (!empty($errors)) {
+            // Sla fouten en data op in transients om terug te tonen in het formulier
+            set_transient('form_errors_' . $form_id, $errors, 60);
+            set_transient('form_data_' . $form_id, $data, 60);
+        } else {
+            // Alles is goed, stuur e-mails
+
+            // Admin e-mail
+            $admin_email = get_option('admin_email'); // Of haal het op uit je opties
+
+            $subject = 'Nieuw formulier inzending';
+            $message = '';
+
+            foreach ($data as $key => $value) {
+                $message .= $key . ': ' . $value . "\n";
+            }
+
+            // Headers voor de e-mail
+            $headers = array(
+                'Content-Type: text/plain; charset=UTF-8',
+                'From: ' . get_bloginfo('name') . ' <' . $admin_email . '>'
+            );
+
+            // Stuur e-mail naar admin
+            wp_mail($admin_email, $subject, $message, $headers);
+
+            // Controleer of er een bevestigingsbericht is ingesteld
+            $confirmation_message = get_field('confirmation', $form_id);
+
+            if (!empty($confirmation_message) && !empty($user_email)) {
+                // Stuur bevestigingsmail naar gebruiker
+                $confirmation_subject = 'Bevestiging van uw inzending';
+                $confirmation_headers = array(
+                    'Content-Type: text/plain; charset=UTF-8',
+                    'From: ' . get_bloginfo('name') . ' <' . $admin_email . '>'
+                );
+
+                wp_mail($user_email, $confirmation_subject, $confirmation_message, $confirmation_headers);
+            }
+
+            // Toon succesbericht
+            set_transient('form_success_' . $form_id, 'Bedankt voor uw inzending.', 60);
+        }
+
+        // Redirect terug naar de formulierpagina om resubmissie te voorkomen
+        wp_redirect($_SERVER['HTTP_REFERER']);
+        exit;
+    }
+}
+add_action('init', 'handle_custom_form_submission');
+
 ?>

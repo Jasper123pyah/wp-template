@@ -3,7 +3,7 @@
     
     &--dark_bg {
         position: relative;
-        .header__image {
+        .header__media {
             filter: brightness(50%);
             width: 100%;
             height: 80vh;
@@ -45,8 +45,8 @@
         @media (max-width: 599px) {
             height: 60vh;
         }
-      
-        .header__image {
+
+        .header__media {
             position: absolute;
             width: 100%;
             height: 80vh;
@@ -129,7 +129,7 @@
             height: auto;
         }
 
-        .header__image {
+        .header__media {
             width: 50%;
             height: 100%;
             object-fit: cover;
