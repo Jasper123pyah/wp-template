@@ -4,20 +4,20 @@
     "menu_order": 0,
     "active": true,
     "post_type": "form",
-    "advanced_configuration": false,
+    "advanced_configuration": true,
     "import_source": "",
     "import_date": "",
     "labels": {
         "name": "Formulieren",
         "singular_name": "Formulier",
         "menu_name": "Formulieren",
-        "all_items": "All Formulieren",
-        "edit_item": "Edit Formulier",
-        "view_item": "View Formulier",
-        "view_items": "View Formulieren",
-        "add_new_item": "Add New Formulier",
-        "add_new": "Add New Formulier",
-        "new_item": "New Formulier",
+        "all_items": "Alle Formulieren",
+        "edit_item": "Formulier bewerken",
+        "view_item": "Bekijk Formulier",
+        "view_items": "Bekijk Formulieren",
+        "add_new_item": "Nieuw Formulier",
+        "add_new": "Nieuw Formulier",
+        "new_item": "Nieuw Formulier",
         "parent_item_colon": "Parent Formulier:",
         "search_items": "Search Formulieren",
         "not_found": "No formulieren found",
@@ -59,7 +59,7 @@
     "menu_position": "",
     "menu_icon": {
         "type": "dashicons",
-        "value": "dashicons-admin-post"
+        "value": "dashicons-list-view"
     },
     "rename_capabilities": false,
     "singular_capability_name": "post",
@@ -85,5 +85,5 @@
     "delete_with_user": false,
     "register_meta_box_cb": "",
     "enter_title_here": "",
-    "modified": 1727696907
+    "modified": 1729163831
 }

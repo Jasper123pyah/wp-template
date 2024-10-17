@@ -128,22 +128,18 @@ function handle_custom_form_submission() {
 	if ( $_SERVER['REQUEST_METHOD'] == 'POST' && isset( $_POST['custom_form_id'] ) ) {
 		// Controleer de nonce voor beveiliging
 		if ( ! isset( $_POST['custom_form_nonce_field'] ) || ! wp_verify_nonce( $_POST['custom_form_nonce_field'], 'custom_form_nonce_action' ) ) {
-			// Ongeldige nonce, verwerk het formulier niet
 			return;
 		}
 
 		$form_id = intval( $_POST['custom_form_id'] );
-
-		// Haal de formulier velden op
 		$fields = get_field( 'fields', $form_id );
 
 		if ( ! $fields ) {
 			return;
 		}
 
-		// Verwerk de formuliergegevens
-		$errors     = [];
-		$data       = [];
+		$errors = [];
+		$data = [];
 		$user_email = '';
 
 		foreach ( $fields as $field ) {
@@ -166,50 +162,26 @@ function handle_custom_form_submission() {
 		}
 
 		if ( ! empty( $errors ) ) {
-			// Sla fouten en data op in transients om terug te tonen in het formulier
 			set_transient( 'form_errors_' . $form_id, $errors, 60 );
 			set_transient( 'form_data_' . $form_id, $data, 60 );
 		} else {
-			// Alles is goed, stuur e-mails
+			$form_title = get_the_title( $form_id );
+			$submission_post = array(
+				'post_title'  => 'Inzending voor formulier ' . $form_title . ' op ' . current_time( 'd-m-Y H:i' ),
+				'post_status' => 'publish',
+				'post_type'   => 'inzending',
+			);
 
-			// Admin e-mail
-			$admin_email = get_option( 'admin_email' ); // Of haal het op uit je opties
+			$submission_id = wp_insert_post( $submission_post );
 
-			$subject = 'Nieuw formulier inzending';
-			$message = '';
+			// Sla form_id en form_data op als post meta
+			update_post_meta( $submission_id, 'form_id', $form_id );
+			update_post_meta( $submission_id, 'form_data', $data );
 
-			foreach ( $data as $key => $value ) {
-				$message .= $key . ': ' . $value . "\n";
-			}
 
-			// Headers voor de e-mail
-			$headers = [
-				'Content-Type: text/plain; charset=UTF-8',
-				'From: ' . get_bloginfo( 'name' ) . ' <' . $admin_email . '>',
-			];
-
-			// Stuur e-mail naar admin
-			wp_mail( $admin_email, $subject, $message, $headers );
-
-			// Controleer of er een bevestigingsbericht is ingesteld
-			$confirmation_message = get_field( 'confirmation', $form_id );
-
-			if ( ! empty( $confirmation_message ) && ! empty( $user_email ) ) {
-				// Stuur bevestigingsmail naar gebruiker
-				$confirmation_subject = 'Bevestiging van uw inzending';
-				$confirmation_headers = [
-					'Content-Type: text/plain; charset=UTF-8',
-					'From: ' . get_bloginfo( 'name' ) . ' <' . $admin_email . '>',
-				];
-
-				wp_mail( $user_email, $confirmation_subject, $confirmation_message, $confirmation_headers );
-			}
-
-			// Toon succesbericht
 			set_transient( 'form_success_' . $form_id, 'Bedankt voor uw inzending.', 60 );
 		}
 
-		// Redirect terug naar de formulierpagina om resubmissie te voorkomen
 		wp_redirect( $_SERVER['HTTP_REFERER'] );
 		exit;
 	}
@@ -279,5 +251,92 @@ function custom_remove_menus() {
 }
 
 add_action( 'admin_menu', 'custom_remove_menus', 999 );
+
+function create_submission_post_type() {
+	$labels = array(
+		'name'               => 'Inzendingen',
+		'singular_name'      => 'Inzending',
+		'menu_name'          => 'Inzendingen',
+		'name_admin_bar'     => 'Inzending',
+		'add_new'            => 'Nieuwe toevoegen',
+		'add_new_item'       => 'Nieuwe inzending toevoegen',
+		'new_item'           => 'Nieuwe inzending',
+		'edit_item'          => 'Inzending bewerken',
+		'view_item'          => 'Inzending bekijken',
+		'all_items'          => 'Alle inzendingen',
+		'search_items'       => 'Zoek inzendingen',
+		'parent_item_colon'  => 'Bovenliggende inzendingen:',
+		'not_found'          => 'Geen inzendingen gevonden.',
+		'not_found_in_trash' => 'Geen inzendingen in de prullenbak gevonden.'
+	);
+
+	$args = array(
+		'labels'             => $labels,
+		'public'             => false,
+		'show_ui'            => true,
+		'show_in_menu'       => 'edit.php?post_type=form',
+		'show_in_admin_bar'  => false, // Voorkom dat het in de admin bar verschijnt
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'inzending' ),
+		'capability_type'    => 'post',
+		'has_archive'        => false,
+		'hierarchical'       => false,
+		'menu_position'      => null,
+		'supports'           => array( 'title' ),
+	);
+
+	register_post_type( 'inzending', $args );
+}
+add_action( 'init', 'create_submission_post_type' );
+
+function set_custom_submission_columns($columns) {
+	unset($columns['date']);
+	$columns['submission_date'] = 'Datum';
+	$columns['form_title'] = 'Formulier';
+	return $columns;
+}
+add_filter( 'manage_inzending_posts_columns', 'set_custom_submission_columns' );
+
+function custom_submission_column( $column, $post_id ) {
+	switch ( $column ) {
+		case 'submission_date':
+			echo get_the_date( '', $post_id );
+			break;
+		case 'form_title':
+			$form_id = get_post_meta( $post_id, 'form_id', true );
+			echo esc_html( get_the_title( $form_id ) );
+			break;
+	}
+}
+add_action( 'manage_inzending_posts_custom_column' , 'custom_submission_column', 10, 2 );
+
+
+function add_submission_meta_box() {
+	add_meta_box(
+		'submission_data_meta_box',
+		'Formuliergegevens',
+		'render_submission_meta_box',
+		'inzending',
+		'normal',
+		'default'
+	);
+}
+add_action( 'add_meta_boxes', 'add_submission_meta_box' );
+
+function render_submission_meta_box( $post ) {
+	$form_data = get_post_meta( $post->ID, 'form_data', true );
+	if ( $form_data && is_array( $form_data ) ) {
+		echo '<table class="form-table">';
+		foreach ( $form_data as $key => $value ) {
+			echo '<tr>';
+			echo '<th>' . esc_html( $key ) . '</th>';
+			echo '<td>' . esc_html( $value ) . '</td>';
+			echo '</tr>';
+		}
+		echo '</table>';
+	} else {
+		echo '<p>Geen formuliergegevens beschikbaar.</p>';
+	}
+}
 
 ?>
