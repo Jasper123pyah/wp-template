@@ -1,0 +1,30 @@
+.embeds {
+	padding: 64px 0;
+
+	@media (max-width: 768px) {
+		padding: 32px 0;
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+
+		&--two {
+			flex-direction: row;
+			gap: 16px;
+
+			@media (max-width: 768px) {
+				flex-direction: column;
+			}
+		}
+	}
+
+	&__embed {
+		flex: 1;
+
+		iframe {
+			width: 100%;
+			height: auto;
+		}
+	}
+}

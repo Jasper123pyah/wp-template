@@ -275,7 +275,7 @@ function create_submission_post_type() {
 		'public'             => false,
 		'show_ui'            => true,
 		'show_in_menu'       => 'edit.php?post_type=form',
-		'show_in_admin_bar'  => false, // Voorkom dat het in de admin bar verschijnt
+		'show_in_admin_bar'  => false,
 		'query_var'          => true,
 		'rewrite'            => array( 'slug' => 'inzending' ),
 		'capability_type'    => 'post',
