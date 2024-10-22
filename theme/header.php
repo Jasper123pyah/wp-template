@@ -1,6 +1,7 @@
 <?php 
     $header_links = get_field('header_links', 'option');
     $logo = get_field('logo', 'option');
+    $logo_icon = get_field('logo_icon', 'option');
     $burger = get_field('icons', 'option')['burger_menu'];
     $close = get_field('icons', 'option')['close'];
     $special_link = get_field('special_link', 'option');
@@ -63,7 +64,7 @@
     <div class="container">
         <div class="navbar--mobile__top">
             <a class="navbar__logo navbar--mobile__logo" href="<?= esc_url( home_url( '/' ) ); ?>">
-                <img src="<?=$logo['url']?>" alt="<?=$logo['alt']?>">
+                <img src="<?=$logo_icon['url']?>" alt="<?=$logo_icon['alt']?>">
             </a>
             <button class="navbar--mobile__close navbar__icon" href="javascript:void(0);">
                 <?=$close?>

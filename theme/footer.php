@@ -53,12 +53,18 @@ $header_links = get_field('header_links', 'option');
 				</div>
 				<div class="footer-top__links footer-top__links--menu">
 					<h4 class="bold">Menu</h4>
-					<?php foreach ($header_links as $link_item): ?>
-						<?php $link = $link_item['link']; ?>
-						<a href="<?= esc_url($link['url']); ?>" class="navigation__link" <?= $link['target'] ? 'target="' . esc_attr($link['target']) . '"' : ''; ?>>
-							<?= esc_html($link['title']); ?>
-						</a>
-					<?php endforeach; ?>
+					<?php if ($header_links): ?>
+						<?php foreach ($header_links as $link_item): ?>
+							<?php
+							$link = $link_item['link']['link'];
+							if ($link):
+								?>
+								<a href="<?= esc_url($link['url']); ?>" class="navigation__link" <?= $link['target'] ? 'target="' . esc_attr($link['target']) . '"' : ''; ?>>
+									<?= esc_html($link['title']); ?>
+								</a>
+							<?php endif; ?>
+						<?php endforeach; ?>
+					<?php endif; ?>
 				</div>
 				<div class="footer-top__links">
 					<h4 class="bold">Bekijk ook</h4>

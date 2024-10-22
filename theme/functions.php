@@ -339,4 +339,73 @@ function render_submission_meta_box( $post ) {
 	}
 }
 
+function enqueue_custom_fonts() {
+	$heading_font = get_field('fonts_heading_font', 'option');
+	$paragraph_font = get_field('fonts_paragraph_font', 'option');
+
+	$fonts = array();
+
+	if ($heading_font) {
+		$fonts[] = $heading_font;
+	}
+
+	if ($paragraph_font && $paragraph_font !== $heading_font) {
+		$fonts[] = $paragraph_font;
+	}
+
+	if (!empty($fonts)) {
+		$fonts_string = implode('&family=', array_map('urlencode', $fonts));
+		$fonts_url = 'https://fonts.googleapis.com/css2?family=' . $fonts_string . '&display=swap';
+
+		wp_enqueue_style('custom-google-fonts', $fonts_url, array(), null);
+	}
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_fonts');
+
+function add_custom_fonts_inline_styles() {
+	$heading_font = get_field('fonts_heading_font', 'option');
+	$paragraph_font = get_field('fonts_paragraph_font', 'option');
+
+	$custom_css = '';
+
+	if ($heading_font) {
+		$custom_css .= "
+            h1, h2, h3, h4, h5, h6 {
+                font-family: '" . esc_attr($heading_font) . "', sans-serif;
+            }
+        ";
+	}
+
+	if ($paragraph_font) {
+		$custom_css .= "
+            body, p, .button {
+                font-family: '" . esc_attr($paragraph_font) . "', sans-serif;
+            }
+        ";
+	}
+
+	if ($custom_css) {
+		wp_add_inline_style('custom-google-fonts', $custom_css);
+	}
+}
+add_action('wp_enqueue_scripts', 'add_custom_fonts_inline_styles');
+
+// Google maps
+
+//function acf_google_map_api( $api ){
+//	if( !get_field('google_maps_api_key', 'option') ) {
+//		return $api;
+//	}
+//	$api['key'] = get_field('google_maps_api_key', 'option');
+//	return $api;
+//}
+//add_filter('acf/fields/google_map/api', 'acf_google_map_api');
+//
+//function acf_init() {
+//	$api_key = get_field('google_maps_api_key', 'option');
+//	if( $api_key ) {
+//		acf_update_setting('google_api_key', $api_key);
+//	}
+//}
+//add_action('acf/init', 'acf_init');
 ?>

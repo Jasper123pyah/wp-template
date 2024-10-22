@@ -40,10 +40,10 @@
         width: 100%;
         margin: 0;
         user-select: none;
-        height: 36px;
+        min-height: 36px;
 
         @media (max-width: 768px) {
-            height: 24px;
+            min-height: 24px;
         }
 
         &:after {
